@@ -1,0 +1,27 @@
+ifndef CROSS_COMPILE
+#CROSS_COMPILE	:= arm-none-linux-gnueabihf-
+CROSS_COMPILE	:= arm-linux-gnueabihf-
+endif
+
+
+CC			:=	${CROSS_COMPILE}gcc
+CPP			:=	${CROSS_COMPILE}cpp
+AS			:=	${CROSS_COMPILE}gcc
+AR			:=	${CROSS_COMPILE}ar
+LINKER		:=	${CROSS_COMPILE}ld
+OC			:=	${CROSS_COMPILE}objcopy
+OD			:=	${CROSS_COMPILE}objdump
+NM			:=	${CROSS_COMPILE}nm
+PP			:=	${CROSS_COMPILE}gcc -E
+
+test123: main.o
+	$(CC) main.o -o test123 
+
+main.o: src/main.c
+	$(CC) -c  $<
+
+
+
+
+# test123: src/main.c
+# 	$(CC) -o test123 src/main.c
