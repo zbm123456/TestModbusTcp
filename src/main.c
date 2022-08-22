@@ -44,7 +44,8 @@ int main(void)
 	ModTcp_Init(&para_modtcp);
 	while(1)
 	{
-		
+		printf("12345 ssdlh\n");
+		sleep(1);
 	}
 	return 0;
 }
